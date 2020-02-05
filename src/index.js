@@ -227,6 +227,7 @@ function getNumberWithEncoding (number, encoding, length)
 	if (!encoding || encoding === 'number') return number;
 	else if (encoding === 'hex') return zero (number.toString (16).toUpperCase (), length);
 	else if (encoding === 'base64') return new Buffer (zero (number.toString(16), 'hex'), length).toString ('base64');
+	else if (encoding === "buffer") return parseInt(value.toString("hex"),16);
 	else 
 	{
 		debug ('getNumberWithEncoding: unknown encoding '+encoding+' for value '+number);
